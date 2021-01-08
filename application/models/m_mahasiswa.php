@@ -32,3 +32,4 @@ class m_mahasiswa extends CI_Model
 
 }
  
+ 

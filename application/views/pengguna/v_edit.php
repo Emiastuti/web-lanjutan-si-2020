@@ -11,19 +11,22 @@
        
         <div class="form- group">
 
-          <label>NIM</label>
-          <input type="text" readonly value="<?=$data_nim->Nim?>" name="nim" class="form-control">
+          <label>username</label>
+          <input type="text" readonly value="<?=$data_username->username?>" name="username" class="form-control">
           
         </div>
         <div class="form-group">
-          <label>Nama Mahasiswa</label>
-          <input type="text" value="<?=$data_nim->Nama?>" name="nama" class="form-control">
+          <label>password</label>
+          <input type="text" value="<?=$data_username->password?>" name="password" class="form-control">
         </div>
         <div class="form-group">
-          <label>Alamat</label>
-          <textarea class="form-control"name="alamat"><?=$data_nim->Alamat ?></textarea>
-          
-        </div> 
+              <label>nama lengkap</label>
+              <input type="text" value="<?=$data_username->nama_lengkap?>" name="nama_lengkap" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>hak akses</label>
+              <input type="text" value="<?=$data_username->hak_akses?>" name="hak_akses" class="form-control">
+            </div>
         <div class="form-group">
           <button type="submit" name="submit" class="btn btn-primary">simpan data</button>
           <a href="<?= site_url('mahasiswa/index')?>" class="btn btn-warning">batal</a>
@@ -38,5 +41,5 @@
   
 </div>
 </body>
-		
+    
 </html> 

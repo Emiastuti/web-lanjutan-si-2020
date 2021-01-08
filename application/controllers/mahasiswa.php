@@ -8,6 +8,10 @@ class mahasiswa extends CI_controller{
 		parent::__construct();
 
 		$this->load->model('m_mahasiswa');
+
+		if(!$this->session->userdata('nama_pengguna')){
+			redirect('login/index');
+		}
 	}
 
 
@@ -16,6 +20,8 @@ class mahasiswa extends CI_controller{
 //	   $data['tbl_mahasiswa'] = $this->db->get('mahasiswa')->result();
 
 	     $data['tbl_mahasiswa'] = $this->m_mahasiswa->getAll();
+
+	     $this->load->view('template/header');
 
 
 		$this->load->view('mahasiswa/v_index',$data);
@@ -28,6 +34,7 @@ class mahasiswa extends CI_controller{
 	
 		public function tambah()
     {
+    	$this->load->view('template/header');
 	   $this->load->view('mahasiswa/v_tambah');
 	}
 	public function simpan_data()
@@ -48,6 +55,7 @@ class mahasiswa extends CI_controller{
 	}
 	public function edit($input_nim)
 	{
+		$this->load->view('template/header');
 		//ambil data dari nim imput
 		$data['data_nim'] = $this->m_mahasiswa->getWhere($input_nim);
 		return $this->load->view('mahasiswa/v_edit',$data);
@@ -57,7 +65,7 @@ class mahasiswa extends CI_controller{
 			$Nim = $this->input->post('nim');
 			$Nama = $this->input->post('nama');
 			$Alamat = $this->input->post('alamat');
-
+ 
 			$data = array(
 				'nim'      => $Nim,
 				'nama'     => $Nama,

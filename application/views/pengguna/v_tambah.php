@@ -1,6 +1,6 @@
  <!DOCTY html>
  <div class="alert alert-primary" role="alert">
-  <h3 align="center">emiastuti/1901050004</h3>
+  <h3 align="center">1901050004</h3>
 </div>
 
 <div class="container">
@@ -37,5 +37,5 @@
   
 </div>
 </body>
-		
+    
 </html> 
